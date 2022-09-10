@@ -1,0 +1,42 @@
+/* mat-card {
+    margin-bottom: 10px;
+  }
+  
+  .mr-10 {
+    margin-right: 10px;
+  }
+  
+  .ml-10 {
+    margin-left: 10px;
+  }
+
+  .maxWidth {
+    max-width: 300px;
+    float: left;
+  }
+
+  .floatLeft {
+    justify-content: left;
+  } */
+  
+  .pad-bot {
+    padding-bottom: 1rem;
+  }
+
+  .card-spacing {
+    padding: 1rem;
+  }
+
+  .loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
