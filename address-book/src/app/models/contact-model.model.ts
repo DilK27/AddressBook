@@ -1,65 +1,87 @@
+export interface dob {
+    age: number,
+    date: string
+}
+
+export interface id {
+    name: string,
+    value: string
+}
+
+export interface location {
+    city: string,
+    state: string,
+    coordinates: coordinates,
+    country: string,
+    postcode: string,
+    street: street,
+    timezone: timezone,
+
+}
+
+export interface coordinates {
+    latitude: string,
+    longitude: string
+}
+
+export interface street {
+    name: string,
+    number: number
+}
+
+export interface timezone {
+    description: string,
+    offset: string
+}
+
+export interface login {
+    md5: string,
+    password: string,
+    salt: string,
+    sha1: string,
+    sha256: string,
+    username: string,
+    uuid: string
+}
+
+export interface name {
+    first: string,
+    last: string,
+    title: string
+}
+
+export interface picture {
+    large: string,
+    medium: string,
+    thumbnail: string
+}
+
+export interface registered {
+    age: number,
+    date: string
+}
+
 export class ContactModel {
     public cell: string;
-    public dob: object = {
-        age: undefined,
-        data: undefined
-    };
+    public dob: dob
     public email: string;
     public gender: string;
-    public id: object = {
-        name: undefined,
-        value: undefined
-    };
-    public location: object = {
-        city: undefined,
-        coordinates: {
-            latitude: undefined,
-            longitude: undefined
-        },
-        country: undefined,
-        postcode: undefined,
-        state: undefined,
-        steet: {
-            name: undefined,
-            number: undefined
-        },
-        timezone: {
-            description: undefined,
-            offset: undefined
-        }
-    };
-    public login: object = {
-        md5: undefined,
-        password: undefined,
-        salt: undefined,
-        sha1: undefined,
-        sha256: undefined,
-        username: undefined,
-        uuid: undefined,
-    };
-    public name: object = {
-        first: undefined,
-        last: undefined,
-        title: undefined,
-    };
+    public id: id;
+    public location: location;
+    public login: login;
+    public name: name;
     public nat: string;
     public phone: string;
-    public picture: object = {
-        large: undefined,
-        medium: undefined,
-        thumbnail: undefined,
-    };
-    public registered: object = {
-        age: undefined,
-        date: undefined,
-    }
+    public picture: picture;
+    public registered: registered;
+    public timezone: timezone;
     public flipped: boolean;
 
-    constructor(cell: string, dob: object, email: string, gender: string, id: object, location: object,
-                login: object, name: object, nat: string, phone: string, picture: object, registered: object, flipped: boolean) 
+    constructor(cell: string, dob: dob, email: string, gender: string, id: id, location: location, timezone: timezone,
+                login: login, name: name, nat: string, phone: string, picture: picture, registered: registered, flipped: boolean) 
     {
         this.cell = cell;
-        this.dob = dob;
+        this.dob = dob
         this.email = email;
         this.gender = gender;
         this.id = id;
@@ -70,61 +92,9 @@ export class ContactModel {
         this.phone = phone;
         this.picture = picture;
         this.registered = registered;
+        this.timezone = timezone;
         this.flipped = flipped;
     }
-
-    getCell(): string {
-        return this.cell;
-    }
-
-    getDOB() {
-        return // TODO dob object construction
-    }
-
-    getEmail(): string {
-        return this.email;
-    }
-
-    getGender(): string {
-        return this.gender;
-    }
-
-    getId() {
-        return // TODO id object construction
-    }
-
-    getLocation() {
-        return // TOOO location object construction
-    }
-
-    getLogin() {
-        return // TODO login object construction
-    }
-
-    getName() {
-        return // TODO name object construction
-    }
-
-    getNat(): string {
-        return this.nat;
-    }
-
-    getPhone(): string {
-        return this.phone;
-    }
-
-    getPicture() {
-        return // TODO picture object construction
-    }
-    
-    getRegistered() {
-        return // TODO registered obhect construction
-    }
-
-    getFlipped(): boolean {
-        return this.flipped;
-    }
-
 
 }
 

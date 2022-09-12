@@ -1,1 +1,40 @@
-<p>contact-details works!</p>
+<mat-list *ngIf="contact">
+    <mat-list-item>
+        <div fxLayout="row" fxLayoutAlign="left">
+            <mat-button-toggle fxLayout="row" fxLayoutAligh="center" [routerLink]="['/contact-list']">Back to contact list</mat-button-toggle>
+        </div>
+        <div class="row">
+            <img matListAvatar [src]="contact?.picture?.thumbnail">
+            <h3 matLine> {{contact.name.title}} {{contact.name.first}}
+                {{contact.name.last}} </h3>
+        </div>
+    </mat-list-item>
+    <mat-list-item class="row"> <b>Gender:&nbsp; </b> {{contact.gender}} </mat-list-item>
+    <mat-list-item class="row"> <b>Cell:&nbsp;</b> {{contact.cell}} </mat-list-item>
+    <mat-list-item class="row"> <b>Phone:&nbsp; </b> {{contact.phone}} </mat-list-item>
+    <mat-list-item class="row"> <b>Email:&nbsp; </b> {{contact.email}} </mat-list-item>
+    <mat-list-item class="row"> <b>Age:&nbsp; </b> {{contact.dob.age}} </mat-list-item>
+    <mat-list-item class="row"> <b>Birthdate:&nbsp; </b> {{contact.dob.date}} </mat-list-item>
+    <mat-list-item class="row"> <b>Address:&nbsp; </b> {{contact.location.street.number}} {{contact.location.street.name}} {{contact.location.city}} {{contact.location.state}} {{contact.location.country}} </mat-list-item>
+    <mat-list-item class="row"> <b>Timezone:&nbsp; </b> {{contact.location.timezone.offset}} </mat-list-item>
+</mat-list>
+<!-- 
+
+<section>
+    <div class="row">
+        <div class="col-lg">
+            <mat-list>
+                <mat-list-item> <b>Current Price:</b> &nbsp;{{data.data.Coin.price}} </mat-list-item>
+                <mat-list-item> <b>Market Cap:</b> &nbsp;{{data.data.Coin.marketCap}} </mat-list-item>
+                <mat-list-item> <b>Supply:</b> &nbsp;{{data.data.Coin.supply}}</mat-list-item>
+            </mat-list>
+        </div>
+        <div class="col-lg">
+            <mat-list>
+                <mat-list-item> <b>Symbol:</b> &nbsp;{{data.data.Coin.symbol}} </mat-list-item>
+                <mat-list-item> <b>Last 24 Hour VWAP:</b> &nbsp;{{data.data.Coin.vwap}}</mat-list-item>
+                <mat-list-item> <b>Last 24 Hour Volume:</b> &nbsp;{{data.data.Coin.volume}} </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</section> -->
