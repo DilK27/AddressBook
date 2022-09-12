@@ -1,11 +1,14 @@
 <div fxFlex fxLayout="column" fxLayoutGap="15px">
-    <mat-toolbar color="primary" class=" pad-bot">
+    <mat-toolbar aria-label="addressBook" color="primary" class=" pad-bot">
         Address Book
     </mat-toolbar>
 
     <div *ngIf="!apiDataLoaded" class="loading-indicator">
-        <mat-spinner></mat-spinner><br />
-        <!-- <p>Loading: Fetching Contacts</p> -->
+        <div fxLayout="row" fxLayoutAligh="center">
+            <mat-spinner></mat-spinner>
+        </div>
+        <div fxLayout="row" fxLayoutAligh="center">
+        </div>
     </div>
     <div *ngIf="apiDataLoaded">
         <div fxLayout="row wrap">
@@ -15,32 +18,34 @@
                     <div (click)="toggleFlip(contact)">
                         <div class="front-card-length" *ngIf="!contact.flipped">
                             <img mat-card-image [src]="contact.picture.large" />
-                            <mat-card-title fxLayout="row"> {{contact.name.title}} {{contact.name.first}}
+                            <mat-card-title aria-label="name" fxLayout="row"> {{contact.name.title}} {{contact.name.first}}
                                 {{contact.name.last}}</mat-card-title>
-                            <mat-card-content fxLayout="row" fxLayoutAlign="left">
-                                Phone Number: {{contact.phone}} <br /> Email: {{contact.email}}
+                            <mat-card-content aria-label="phone"fxLayout="row" fxLayoutAlign="left">
+                                Phone Number: {{contact.phone}}
+                                <br /> 
+                                Email: {{contact.email}}
                             </mat-card-content>
-                            <div fxLayout="row" fxLayoutAlign="center">
+                            <div aria-label="flipCard" fxLayout="row" fxLayoutAlign="center">
                                 <mat-icon matTooltip="click card to flip for more info">rotate_left</mat-icon>
                             </div>
                         </div>
-                        <div  *ngIf="contact.flipped">
+                        <div *ngIf="contact.flipped">
                             <mat-card-title> {{contact.name.title}} {{contact.name.first}} {{contact.name.last}}
                             </mat-card-title>
                             <mat-card-content class="scrollable">
-                                <mat-form-field class="full-width" appearance="fill">
+                                <mat-form-field aria-label="gender" class="full-width" appearance="fill">
                                     <mat-label>Gender</mat-label>
                                     <input matInput disabled>{{contact.gender}}
                                 </mat-form-field>
-                                <mat-form-field class="full-width" appearance="fill">
+                                <mat-form-field aria-label="cell" class="full-width" appearance="fill">
                                     <mat-label>Cell</mat-label>
                                     <input matInput disabled>{{contact.cell}}
                                 </mat-form-field>
-                                <mat-form-field class="full-width" appearance="fill">
+                                <mat-form-field aria-label="phone" class="full-width" appearance="fill">
                                     <mat-label>Phone</mat-label>
                                     <input matInput disabled>{{contact.phone}}
                                 </mat-form-field>
-                                <mat-form-field class="full-width" appearance="fill">
+                                <mat-form-field aria-label="email" class="full-width" appearance="fill">
                                     <mat-label>Email</mat-label>
                                     <input matInput disabled>{{contact.email}}
                                 </mat-form-field>
@@ -60,7 +65,8 @@
                                     <mat-label>Timezone</mat-label>
                                     <input matInput disabled>{{contact.location.timezone.offset}}
                                 </mat-form-field> -->
-                                 <mat-button-toggle fxLayout="row" fxLayoutAligh="center" (click)="routeToDetails(contact)">More Details</mat-button-toggle>
+                                <mat-button-toggle fxLayout="row" fxLayoutAligh="center"
+                                    (click)="routeToDetails(contact)">More Details</mat-button-toggle>
                             </mat-card-content>
                         </div>
                     </div>
