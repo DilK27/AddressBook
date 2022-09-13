@@ -20,3 +20,6 @@ One reqiurement I would have like to change for this assesment is instead of rou
 I would have also liked to full implement the css animation of flipping the card. Their was an edge case with hovering/clicking the card in the website view that was creating a bug, leading me to pull the animation. I had the animation working in the mobile view. 
 
 
+
+# Rare Issue
+Occasionally when getting a response from the random user endpoint I am recieveing a 520 Get Error. This started happening randomly on Monday night, and has persisted into Tuesday morning.
