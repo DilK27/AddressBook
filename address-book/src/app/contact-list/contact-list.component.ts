@@ -36,7 +36,7 @@ export class ContactListComponent implements OnInit {
     });
   }
 
-  toggleFlip(contact: ContactModel) {
+  toggleFlip(contact: ContactModel, event: Event) {
     contact.flipped = contact.flipped ? false : true;
   }
 

@@ -5,6 +5,15 @@
   .card-spacing {
     padding: 1rem;
   }
+/* 
+  .card {
+    transition: all .1s ease;
+    transform-style: preserve-3d;
+  }
+
+  .card:hover {
+    transform: rotateY(180deg);
+  } */
 
   .loading-indicator {
     display: flex;
