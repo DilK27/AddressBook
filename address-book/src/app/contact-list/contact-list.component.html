@@ -14,8 +14,8 @@
         <div fxLayout="row wrap">
             <div *ngFor="let contact of contactList" fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100"
                 fxLayout="column" fxFlexAlign="stretch" class="card-spacing">
-                <mat-card class="mat-elevation-z1 card" id="card">
-                    <div (click)="toggleFlip(contact, $event)">
+                <mat-card class="mat-elevation-z1 card">
+                    <div (click)="toggleFlip(contact)">
                         <div class="front-card-length" *ngIf="!contact.flipped">
                             <img mat-card-image [src]="contact.picture.large" />
                             <mat-card-title aria-label="name" fxLayout="row"> {{contact.name.title}} {{contact.name.first}}
