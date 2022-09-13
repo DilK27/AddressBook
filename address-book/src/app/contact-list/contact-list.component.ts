@@ -26,7 +26,6 @@ export class ContactListComponent implements OnInit {
     this.fetchContacts.getContacts(this.pageNumber).subscribe((data: any) => {
       if(data && data.results) {
         this.contactList = data.results 
-        console.log(this.contactList);
       }
       this.contactList.forEach((contact: ContactModel)=>{
         contact.flipped = false;

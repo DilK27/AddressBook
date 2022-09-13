@@ -14,10 +14,6 @@ describe('ContactListComponent', () => {
 
     fixture = TestBed.createComponent(ContactListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

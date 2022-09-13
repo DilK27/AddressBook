@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactModel } from '../models/contact-model.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, catchError, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -19,7 +19,9 @@ private currentPage: number = 1;
 
   getContacts(page: number) {
     const randomUserURL = `https://randomuser.me/api/?page=${page}&results=${this.results}&seed=${this.seed}`;
-    return this.httpClient.get(randomUserURL);
+    return this.httpClient.get(randomUserURL).pipe(
+      catchError(async (err) => this.catchError(err))
+    );
   }
 
   setCurrentContact(contact: ContactModel) {
@@ -32,6 +34,13 @@ private currentPage: number = 1;
 
   getCurrentPage() {
     return this.currentPage;
+  }
+
+  catchError(err :Error){
+    if(err) {
+      alert(err.message);
+      location.reload();
+    }
   }
 
 }
